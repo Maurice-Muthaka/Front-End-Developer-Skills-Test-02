@@ -11,7 +11,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchSingleCourse } from "../../../actions/courseActions";
 import Spinner from "../../common/spinner";
 import NotFound from "../../common/404";
-import SingleCourseCard from "../../common/singleCourseCard";
 
 const customStyles = {
     overlay: {
@@ -36,7 +35,6 @@ const customStyles = {
       opacity               : 1,
       paddingLeft           : 50,
       paddingRight          : 50,
-      paddingRight          : 50,
       display          : 'flex',
       justifyContent          : 'center',
       alignItems          : 'center',
@@ -51,7 +49,7 @@ const customStyles = {
 function CourseScreen(props) {
 
     const singleCourse = useSelector(state => state.singleCourse);
-    const { course, loading, error } = singleCourse;
+    const { course, loading } = singleCourse;
 
     const [activity, setActivity] = useState(null);
     const [modalIsOpen,setIsOpen] = useState(false);
@@ -64,16 +62,11 @@ function CourseScreen(props) {
         setIsOpen(false);
       }
 
-    console.log(activity)
-
-    const id = props.match.params.id;
-    console.log(id);
-
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(fetchSingleCourse(props.match.params.id));
-        return () => {};
+ 
     }, [])
 
   return (
@@ -101,7 +94,7 @@ function CourseScreen(props) {
                                     <h6 className="text-white pb-2">{section.title}</h6>
 
                                     {section.lessons.map(lesson =>
-                                        <h6 className="text-white"><FaCheckCircle className="text-success" /> {lesson.title}</h6>
+                                        <h6 key={lesson.id} className="text-white"><FaCheckCircle className="text-success" /> {lesson.title}</h6>
                                     )}
                                 </div>
                             )}
@@ -168,29 +161,29 @@ function CourseScreen(props) {
                                 <div className="col-md-6 d-flex flex-column align-items-start">
                                     <h1 className="profile-title text-left">Welcome back, <br />Shot</h1>
                                     <p className="text-white">75% Completed</p>
-                                    <a className="resume">Resume</a>
+                                    <a href="/" className="resume">Resume</a>
                                 </div>
                             </div>
 
                         </div>
                         
 
-                        <div class="container-fluid mt-5 mb-5">
+                        <div className="container-fluid mt-5 mb-5">
 
                             <div className="row mt-4">
 
                                 <div className="col-md-12"> 
                                     <nav>
-                                        <div class="nav nav-tabs btn-group" id="nav-tab" role="tablist" style={{border: 'none', color: '#fff'}}>
-                                            <a class="nav-link btn-tab active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Modules</a>
-                                            <a class="nav-link btn-tab" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Calendar</a>
-                                            <a class="nav-link btn-tab" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Messages</a>
+                                        <div className="nav nav-tabs btn-group" id="nav-tab" role="tablist" style={{border: 'none', color: '#fff'}}>
+                                            <a className="nav-link btn-tab active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Modules</a>
+                                            <a className="nav-link btn-tab" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Calendar</a>
+                                            <a className="nav-link btn-tab" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Messages</a>
                                         </div>
                                     </nav>
 
-                                    <div class="tab-content mt-4" id="nav-tabContent">
+                                    <div className="tab-content mt-4" id="nav-tabContent">
 
-                                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                        <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
                                         {course && course.section.slice(0, 2).map(section => 
                                             <div className="mt-4" key={section.id}>
@@ -241,8 +234,8 @@ function CourseScreen(props) {
                 
                                         </div>
 
-                                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">Calendar will be put here</div>
-                                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">Messages will be put here</div>
+                                        <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">Calendar will be put here</div>
+                                        <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">Messages will be put here</div>
                                     </div>
                                 </div>
 

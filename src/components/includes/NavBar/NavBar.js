@@ -9,8 +9,6 @@ export function NavBar() {
 
   const path = window.location.pathname;
 
-  console.log(path)
-
   return (
     <nav className="navbar navbar-light navbar-expand-md" id="top-nav-bar">
       <div className="container-fluid">

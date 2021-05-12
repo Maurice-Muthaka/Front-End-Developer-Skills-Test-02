@@ -8,16 +8,14 @@ import { fetchCourses } from "../../../actions/courseActions";
 function LearnScreen() {
 
     const listCourses = useSelector(state => state.listCourses);
-    const { courses, loading, error } = listCourses;
-
-    console.log(courses)
+    const { courses } = listCourses;
 
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(fetchCourses());
         return () => {};
-    }, [])
+    }, [fetchCourses])
 
   return (
     <div className="pb-5" id="home2">
@@ -33,17 +31,17 @@ function LearnScreen() {
         </div>
         
 
-        <div class="container mt-5 mb-5">
+        <div className="container mt-5 mb-5">
 
             <div className="row d-flex justify-content-center mb-5">
                 <div className="col-md-6">
                     <div className="">
                         <form className="d">
                             
-                        <div class="input-group search-block">
-                            <input type="text" class="form-control search" id="inlineFormInputGroupUsername" placeholder="What event are you looking for?" />
+                        <div className="input-group search-block">
+                            <input type="text" className="form-control search" id="inlineFormInputGroupUsername" placeholder="What event are you looking for?" />
                             
-                            <div class="input-group-prepend">
+                            <div className="input-group-prepend">
                                 <button type="button" className="btn search-btn"><FaSearch /></button>
                             </div>
                         </div>

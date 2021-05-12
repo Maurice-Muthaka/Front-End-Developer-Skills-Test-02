@@ -38,7 +38,7 @@ function SingleIncubatorScreen() {
             </div>
 
             <div className="col-md-2">
-              <a class="link-fund" href="/learn" role="button">View Startups</a>
+              <a className="link-fund" href="/learn" role="button">View Startups</a>
             </div>
           </div>
 
@@ -80,10 +80,10 @@ function SingleIncubatorScreen() {
 
                 <h4 className="mb-3">Tags</h4>
 
-                <a className="btn btn-outline-dark btn-sm mr-2">Crypto</a>
-                <a className="btn btn-outline-dark btn-sm mr-2">Exchanges</a>
-                <a className="btn btn-outline-dark btn-sm mr-2">NFT</a>
-                <a className="btn btn-outline-dark btn-sm">Blockchain</a>
+                <a href="/" className="btn btn-outline-dark btn-sm mr-2">Crypto</a>
+                <a href="/" className="btn btn-outline-dark btn-sm mr-2">Exchanges</a>
+                <a href="/" className="btn btn-outline-dark btn-sm mr-2">NFT</a>
+                <a href="/" className="btn btn-outline-dark btn-sm">Blockchain</a>
 
               </div>
             </div>

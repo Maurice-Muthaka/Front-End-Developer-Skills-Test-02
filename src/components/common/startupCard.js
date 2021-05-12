@@ -28,7 +28,7 @@ export default function StartupCard() {
 
             <div className="d-flex justify-content-between">
               <a href="/" className="fund">Fund Startup</a>
-              <a href="/" className="learn-m">Learn more</a>
+              <a href="/incubators/1" className="learn-m">Learn more</a>
             </div>
 
         </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import mango from "../../images/mango.png";
 
 function TeamCard(props) {
   return (

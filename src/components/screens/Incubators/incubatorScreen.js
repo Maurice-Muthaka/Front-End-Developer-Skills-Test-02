@@ -13,7 +13,7 @@ function IncubatorScreen() {
                 <div className="container"></div>
                 <div style={{width: 900}} className="container d-flex flex-column align-items-center text-center">
                     <h1 className="cripto-title text-left">Invest directly into minority innovations.</h1>
-                    <a class="link-inc" href="/learn" role="button">View Startups</a>
+                    <a className="link-inc" href="/incubators/1" role="button">View Startups</a>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@ function IncubatorScreen() {
         </div>
 
 
-        <div class="container mt-5 mb-5">
+        <div className="container mt-5 mb-5">
             <div className="row">
                 <div className="col-md-3">
                     <h3 className="text-white">Upcoming Startups</h3>
@@ -84,7 +84,7 @@ function IncubatorScreen() {
             </div>
         </div>
 
-        <div class="container mt-5 mb-5">
+        <div className="container mt-5 mb-5">
             <div className="row">
                 <div className="col-md-3">
                     <StartupCard />
@@ -104,7 +104,7 @@ function IncubatorScreen() {
             </div>
         </div>
 
-        <div class="container mt-5">
+        <div className="container mt-5">
             <div className="row">
                 <div className="col-md-3">
                     <StartupCard />

@@ -4,7 +4,6 @@ import store from "./store";
 import Routers from "./Routes";
 import "./components/styles/styles.css";
 import { NavBar } from "./components/includes/NavBar/NavBar";
-import { Footer } from "./components/includes/Footer/Footer";
 
 function App(props) {
   return (
