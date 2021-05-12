@@ -6,6 +6,8 @@ import { IoChevronBack } from 'react-icons/io5';
 import { IoMdTime } from 'react-icons/io';
 import ReactPlayer from 'react-player'
 import Modal from 'react-modal';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import profile from "../../../images/profile.png";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSingleCourse } from "../../../actions/courseActions";
@@ -155,10 +157,24 @@ function CourseScreen(props) {
                         <div className="intro-course">
 
                             <div className=" row d-flex justify-content-center align-items-center">
-                                <div className="col-md-3">
-                                    <img className="img-fluid img-circle" style={{borderRadius: '50%'}} src={profile} alt="Profile picture" />
+                                <div className="col-md-4">
+                                    {/* <img className="img-fluid img-circle" style={{borderRadius: '50%'}} src={profile} alt="Profile picture" /> */}
+                                    <div style={{position: 'relative', width: '170px', height: '170px'}}>
+                                        <img style={{position: 'absolute', width: '100%', bottom: '0px', top: 0, borderRadius: '50%'}} src={profile} />
+                                        <div style={{position: 'absolute'}}>
+                                            <CircularProgressbar
+                                            value={25}
+                                            strokeWidth={5}
+                                            styles={buildStyles({
+                                                pathColor: "#ffffff",
+                                                trailColor: "#141471"
+                                              })}
+                                            />
+                                        </div>
+                                    </div>
+                                    
                                 </div>
-                                <div className="col-md-6 d-flex flex-column align-items-start">
+                                <div className="col-md-8 pl-5 d-flex flex-column align-items-start">
                                     <h1 className="profile-title text-left">Welcome back, <br />Shot</h1>
                                     <p className="text-white">75% Completed</p>
                                     <a href="/" className="resume">Resume</a>
@@ -192,7 +208,7 @@ function CourseScreen(props) {
                                                     // <SingleCourseCard 
                                                     // data={lesson}
                                                     // onClick ={(e) => console.log('okay')} />
-                                                    <div className="card course-card mb-3" onClick={(e) => setActivity(lesson)} key={lesson.id}>
+                                                    <div className="card course-card mb-3" style={{cursor: 'pointer'}} onClick={(e) => setActivity(lesson)} key={lesson.id}>
                                                         <div className="card-body">
 
                                                             <div className="row d-flex">
@@ -218,7 +234,7 @@ function CourseScreen(props) {
 
                                                                 <div className="col-md-3 d-flex justify-content-end">
                                                                     <div>
-                                                                        <div className="head pl-5 pr-5 p-1" style={{backgroundColor: '#00AA4F', borderRadius: 10}}>
+                                                                        <div className="head pl-5 pr-5" style={{backgroundColor: '#00AA4F', borderRadius: 10}}>
                                                                             <span className="small text-white">Completed</span>
                                                                         </div>
                                                                     </div>
@@ -262,7 +278,20 @@ function CourseScreen(props) {
             >
 
             <h6 className="text-white mt-2">Activity Completed!</h6>
-            <img className="img-fluid" width="150" style={{borderRadius: '50%'}} src={profile} alt="Profile picture" />
+           
+            <div style={{position: 'relative', width: '120px', height: '120px', margin: 10}}>
+                <img style={{position: 'absolute', width: '100%', bottom: '0px', top: 0, borderRadius: '50%'}} src={profile} />
+                <div style={{position: 'absolute'}}>
+                    <CircularProgressbar
+                    value={25}
+                    strokeWidth={5}
+                    styles={buildStyles({
+                        pathColor: "#ffffff",
+                        trailColor: "#FFC700"
+                        })}
+                    />
+                </div>
+            </div>
 
             <p className="small text-white mt-2">{activity && activity.progress} Complete</p>
             <p className="text-center text-white">
