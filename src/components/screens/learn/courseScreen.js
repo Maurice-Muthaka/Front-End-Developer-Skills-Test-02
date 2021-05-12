@@ -181,10 +181,10 @@ function CourseScreen(props) {
 
                                 <div className="col-md-12"> 
                                     <nav>
-                                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                            <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Modules</a>
-                                            <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Calendar</a>
-                                            <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Messages</a>
+                                        <div class="nav nav-tabs btn-group" id="nav-tab" role="tablist" style={{border: 'none', color: '#fff'}}>
+                                            <a class="nav-link btn-tab active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Modules</a>
+                                            <a class="nav-link btn-tab" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Calendar</a>
+                                            <a class="nav-link btn-tab" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Messages</a>
                                         </div>
                                     </nav>
 
@@ -201,25 +201,37 @@ function CourseScreen(props) {
                                                     // onClick ={(e) => console.log('okay')} />
                                                     <div className="card course-card mb-3" onClick={(e) => setActivity(lesson)} key={lesson.id}>
                                                         <div className="card-body">
-                                                            <div className="d-flex justify-content-end">
 
-                                                                <div className="head d-flex align-items-center pl-5 pr-5 p-1" style={{backgroundColor: '#00AA4F', borderRadius: 10}}>
-                                                                    <span className="small text-white">Completed</span>
+                                                            <div className="row d-flex">
+                                                                <div className="mt-2 col-md-2">
+                                                                    <img width="150" src={lesson.thumbnail} alt="Thumbnail" />
                                                                 </div>
-                                                            </div>
 
-                                                            <div className="mt-2">
-                                                                <h3 className="text-white text-center">Week 1 - {lesson.title}</h3>
-                                                            </div>
+                                                                <div className="col-md-7">
+                                                                    <div className="mt-2">
+                                                                        <h3 className="text-white text-center">Week 1 - {lesson.title}</h3>
+                                                                    </div>
 
-                                                            <div className="row d-flex justify-content-center">
-                                                                <div className="col-md-4 d-flex ml-2 mt-1 mb-1">
-                                                                <div className="hr-one-line2 ml-3" style={{ width: lesson.progress, height: 3, borderRadius: 50 }}></div>
-                                                                <div className="hr-two-line" style={{ width: '100%', height: 3, borderRadius: 50 }}></div>
+                                                                    <div className="row d-flex justify-content-center">
+                                                                        <div className="col-md-12 d-flex ml-2 mt-1 mb-1">
+                                                                        <div className="hr-one-line2 ml-3" style={{ width: lesson.progress, height: 3, borderRadius: 50 }}></div>
+                                                                        <div className="hr-two-line" style={{ width: '100%', height: 3, borderRadius: 50 }}></div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <p className="text-white text-center small">{lesson.progress} Completed</p>
+
                                                                 </div>
-                                                            </div>
 
-                                                            <p className="text-white text-center small">{lesson.progress} Completed</p>
+                                                                <div className="col-md-3 d-flex justify-content-end">
+                                                                    <div>
+                                                                        <div className="head pl-5 pr-5 p-1" style={{backgroundColor: '#00AA4F', borderRadius: 10}}>
+                                                                            <span className="small text-white">Completed</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
 
                                                         </div>
                                                     </div>
@@ -229,8 +241,8 @@ function CourseScreen(props) {
                 
                                         </div>
 
-                                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
-                                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+                                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">Calendar will be put here</div>
+                                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">Messages will be put here</div>
                                     </div>
                                 </div>
 

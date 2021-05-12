@@ -63,6 +63,25 @@
   color: #fff;
 }
 
+.btn-tab {
+  color: #fff;
+}
+
+.btn-tab:hover {
+  color: #fff;
+  border: none !important;
+}
+
+.btn-home-learn {
+  background: #141471 !important;
+  color: #fff !important;
+}
+
+.btn-home-inc {
+  color: #141471 !important;
+  border: 2px solid #141471 !important;
+} 
+
 #sidebar {
   height: 95vh;
   overflow-x: hidden;
