@@ -1,5 +1,5 @@
 import { LIST_COURSES_REQUEST, LIST_COURSES_SUCCESS, LIST_COURSES_FAIL, SINGLE_COURSE_REQUEST, SINGLE_COURSE_SUCCESS, SINGLE_COURSE_FAIL } from "./constants";
-import { courses } from "./../courses";
+import { courses } from "../data/courses";
 
 const fetchCourses = () => async (dispatch) => {
 

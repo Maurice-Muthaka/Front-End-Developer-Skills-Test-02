@@ -282,6 +282,7 @@ function CourseScreen(props) {
             <div style={{position: 'relative', width: '120px', height: '120px', margin: 10}}>
                 <img style={{position: 'absolute', width: '100%', bottom: '0px', top: 0, borderRadius: '50%'}} src={profile} />
                 <div style={{position: 'absolute'}}>
+                    
                     <CircularProgressbar
                     value={25}
                     strokeWidth={5}
